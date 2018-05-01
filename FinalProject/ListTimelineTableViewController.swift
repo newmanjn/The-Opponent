@@ -12,7 +12,7 @@ import TwitterKit
 class ListTimelineTableViewController: TWTRTimelineViewController {
     
     
-    var teamName = "PittsburghPenguins"
+    var teamName = "TheBostonBruins"
     
     override func viewDidLoad() {
         super.viewDidLoad()

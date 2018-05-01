@@ -11,7 +11,7 @@ import TwitterKit
 
 class SecondTeamVC: TWTRTimelineViewController {
     
-    var teamName = "WashingtonCapitals"
+    var teamName = "TampaBayLightning"
 
     override func viewDidLoad() {
         super.viewDidLoad()

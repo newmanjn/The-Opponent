@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
-    var currentPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,24 +35,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        loginTwitter() { () -> () in
-           func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                if segue.identifier == "ShowTimelineSegue" {
-                    let destination = segue.destination as! ListTimelineTableViewController
-                }
-            }
+        loginTwitter()
         }
-    }
     
-        func loginTwitter (completed: @escaping () -> ()) {
+        func loginTwitter () {
         TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
             if (session != nil) {
                 print("signed in as \(String(describing: session?.userName))");
+                self.performSegue(withIdentifier: "ShowTimelineSegue", sender: self)
             } else {
                 print("error: \(String(describing: error?.localizedDescription))");
             }
         })
-        completed ()
     }
 }
 
